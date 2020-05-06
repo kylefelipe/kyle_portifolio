@@ -3,33 +3,94 @@
     <head>
         <meta charset="utf-8">
         <title>Kyle Felipe - Portifólio</title>
+        <style>
+            body{
+                background-color: #F7FFF7 ;
+                font-size: "16px";
+            }
+            #pessoal{
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: #05668d;
+                font-size: 3em;
+                text-align: center;
+ 
+            }
+            .descricao{
+                color: #4ecdc4;
+                font-style: italic;
+                font-size: 1.4em;
+                font-weight: bolder;
+            }
+            #mypicture{
+                border-radius: 10% ;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            em{
+                color: #1a535c;
+            }
+            #skills-list{
+                font-family: 'Courier New', Courier, monospace;
+                color: #028090 ;
+            }
+            ul {
+                font-size: 1.2em;
+            }
+            .strong-skill{
+                font-weight: bold ;
+            }
+            .titulos{
+                color: #432371;
+            }
+            .link-externo{
+                color: #0fa36b;
+            }
+            .button{
+                background-color: #432371;
+                border-radius: 10px;
+                text-decoration: none;
+                color: white;
+                font-size: 1.15em;
+                font-weight: 700;
+                padding: 15px 30px;
+            }
+        </style>
     </head>
     <body>
-        <h1 id="pessoal">Felipe Vieira Roberto</h1> 
+        <h1 id="pessoal">Kyle Felipe Vieira Roberto</h1> 
         <img id="mypicture" src="img/eu2.jpg" alt="Euzinho lindo!" width="300px"><br>
-        <em>Nacionalidade: Brasileiro</em><br>
-        <em>Naturalidade: Minas Gerais</em><br>
-        <em>Local:  Lagoa Santa/MG</em><br>
+
+        <h2 class= "titulos">WHOAMI:</h2>
+        <p class="descricao">Baixista por amor, geogeek, entusiasta do software livre<br>
+            Pythonista e futuro desenvolvedor Full-stack pela 
+            <a class="link-externo" href="https://www.betrybe.com/">TRYBE</a>.</p>
+    
+        Nacionalidade: <em>Brasileiro</em><br>
+        Naturalidade: <em>Minas Gerais</em><br>
+        Local: <em>Lagoa Santa/MG</em><br>
         
     
-        <h2 id="habilidades">Habilidades</h2>
-        <ul>
-            <li>Linux</li>
-            <li>Python</li>
-            <li><strong>Geoprocessamento</strong></li>
-            <li>SQL</li>
-            <li>PostgreSQL</li>
-            <li>Postgis</li>
-            <li>SQLite</li>
-            <li><strong>Spatialite</strong></li>
-            <li><strong>Qgis</strong></li>
-            <li>Shell Script</li>
+        <div >
+            <h2 class= "titulos" id="habilidades">Habilidades</h2>
+                <ul id="skills-list">
+                    <li>Linux</li>
+                    <li>Python</li>
+                    <li class="strong-skill">Geoprocessamento</li>
+                    <li>SQL</li>
+                    <li>PostgreSQL</li>
+                    <li>Postgis</li>
+                    <li>SQLite</li>
+                    <li class="strong-skill">Spatialite</li>
+                    <li class="strong-skill">Qgis</li>
+                    <li>Shell Script</li>
         </ul>
+        </div>
 
         <a target="_blank" href="https://kylefelipe.gitlab.io/apostila_qgis_3/"> Minha apostila sobre Qgis</a><br>
 
         <a href="#mypicture">Esse sou eu!</a>
-        <h2 id="redes">Onde me encontrar!</h2>
+        <h2 class= "titulos" id="redes">Onde me encontrar!</h2>
         <ul>
             <li><a target="_blank" href="https://www.gitlab.com/kylefelipe">Gitlab</a></li>
             <li><a target="_blank" href="https://www.github.com/kylefelipe">Github</a></li>
@@ -38,10 +99,10 @@
             <li><a target="_blank" href="https://www.youtube.com/thinkfreegeo">Youtube!</a></li>
         </ul>
 
-        <h2 id="indice">Índice:</h2>
-        <a href="#pessoal">Topo</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#redes">Onde me encontrar!</a>
+        <h2 class= "titulos" id="indice">Índice:</h2>
+        <a class="button" href="#pessoal">Topo</a>
+        <a class="button" href="#habilidades">Habilidades</a>
+        <a class="button" href="#redes">Onde me encontrar!</a>
 
     </body>
 </html>
