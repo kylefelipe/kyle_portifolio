@@ -1,0 +1,100 @@
+
+body{
+    background-color: #0B132B ;
+    font-size: 20px;
+    color: #6FFFE9;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+em{
+    font-weight: bold;
+}
+ul {
+    font-size: 1.2em;
+    list-style-type: none;
+}
+p{
+    text-align: justify;
+}
+#pessoal{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3em;
+    text-align: center;
+}
+#skills-list{
+    font-family: 'Courier New', Courier, monospace;
+    color: #028090 ;
+}
+.descricao{
+    color: #4ecdc4;
+    font-style: italic;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.strong-skill{
+    font-weight: bold ;
+}
+.titulos{
+    color: #432371;
+}
+.link-externo{
+    color: #0fa36b;
+}
+.button{
+    position: relative;
+    bottom: -15em;
+    background-color: #432371;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.15em;
+    font-weight: 700;
+    padding: 15px 30px;
+}
+.faixa{
+    position:relative;
+    background-color: #1C2541;
+    width: 100%;
+    top: 0.5em;
+    /*border-bottom: 10px;*/
+    /*padding-top: 5px;
+    padding-bottom: 5px;*/
+    text-align: center;
+}
+#container{
+    position: relative;
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    top: 0.3em;
+    width: 100%;
+    height: 17em;
+    border-style: dotted;
+}
+#mypicture{
+    border-radius: 15% ;
+    box-shadow: 10px 10px 5px #1C2541;
+}
+.apresentacao{
+    max-width: 60%;
+    float: left;
+    border-style: dotted;
+    vertical-align: middle;
+}
+.minha-foto{
+    vertical-align: middle;
+    padding: 0.5em;
+    float: right;
+    border-style: dotted;
+}
+.redes-sociais{
+    position: relative;
+    display: inline;
+    top:20em;
+}
+.artigos-palestras{
+    position: relative;
+    display: inline;
+    top: 20em;
+}
