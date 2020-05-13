@@ -8,7 +8,7 @@ for (let indice = 0; indice < numbers.length; indice++) {
 }
 
 if (impares > 0) {
-    console.log("Encrontrados", impares, "valores ímpares!")
+    console.log("Encontrados", impares, "valores ímpares!")
 } else {
     console.log("Não há valores ímpares!")
 }
