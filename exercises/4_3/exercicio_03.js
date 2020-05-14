@@ -1,14 +1,12 @@
 let n = 5;
 
-for (i = 1 ; i <= n; i += 1){
-  let espacos = "";
-  for (j = n-i; j > 0; j -= 1) {
-    espacos += " ";
+for (let numLinha = 1 ; numLinha < n; numLinha += 1){ //quantidade de linhas
+  let linha = "";
+  for (let qtEspacos = n-numLinha; qtEspacos > 0; qtEspacos -= 1) { // gera os espaços
+    linha += " ";
   }
-  let linha = '';
-  for (k = 0;k < i; k+=1) {
+  for (let qtAsterisco = 0;qtAsterisco < numLinha; qtAsterisco+=1) { 
     linha += "*";
-    // console.log(linha);
   }
-  console.log(espacos+linha);
+  console.log(linha);
 }
