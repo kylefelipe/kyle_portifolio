@@ -1,28 +1,26 @@
 let info = {
-  personagem: ["Margarida","Tio Patinhas"],
-  origem: ["Pato Donald", "Christmas on Bear Mountain, Dells's Four Collor Commics #178"],
-  nota: ["Namorada do personagem principal nos quadrinhos do Pato Donald","O último MacPatinhas."],
-  recorrente: ["sim", "sim"],
+  personagem: "Margarida",
+  origem: "Pato Donald",
+  nota: "Namorada do personagem principal nos quadrinhos do Pato Donald",
+  recorrente: "sim",
 };
 
-console.log("Bem-vindo(a)!", info.personagem)
-
-for (x in info) {
-  console.log(x);
-}
-for (x in info) {
-  console.log(info[x]);
+let info2 = {
+  personagem: "Tio Patinhas",
+  origem: "Christmas on Bear Mountain, Dells's Four Collor Commics #178",
+  nota: "O último MacPatinhas.",
+  recorrente: "sim",
 }
 
 for (x in info) {
   if (x !== "recorrente") {
-    console.log(info[x][0], "e", info[x][1]);
+    console.log(info[x], "e", info2[x]);
   } else {
-    if (info[x][0] === "sim" && info[x][1] === "sim") {
-     console.log("Ambos são recorrentes");
-   }
-   else {
+    if (info[x] === "sim" && info2[x] === "sim") {
+      console.log("Ambos são recorrentes");
+    }
+    else {
       console.log("Apenas um é recorrente!")
     }
-  } 
+  }
 }
