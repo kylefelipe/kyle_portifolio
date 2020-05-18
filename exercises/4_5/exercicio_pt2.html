@@ -30,7 +30,7 @@
     </style>
   </head>
   <body>
-    <h1 class="title">Exercício 4.4 - JavaEscripito </h1>
+    <h1 class="title">Exercício 4.5 - JavaEscripito </h1>
     <div class="main-content">
       <div class="center-content">
         <p>Texto padrão do nosso site</p>
@@ -55,6 +55,11 @@
          document.getElementsByTagName(tag)[id].innerText = texto;
        }
        mudaTextoTag("2 anos mais velho!", "p", 2)
+       function mudarCorDeFundo(cor, classe) {
+         let mudarCorBG = document.getElementsByClassName(classe)[0];
+         mudarCorBG.style.backgroundColor = cor;
+       }
+       mudarCorDeFundo("#0fa36b", "main-content")
     </script>
   </body>
 </html>
