@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="paiDoPai">
+      <div id="pai">
+        <div id="primeiroFilho"></div>
+        <div id="elementoOndeVoceEsta">
+          <div id="primeiroFilhoDoFilho"></div>
+          <div id="segundoEUltimoFilhoDoFilho"></div>
+        </div>
+        Atenção!
+        <div id="terceiroFilho"></div>
+        <div id="quartoEUltimoFilho"></div>
+      </div>
+    </div>
+    <script>
+      let toAqui = document.getElementById("elementoOndeVoceEsta");
+      let pai = toAqui.parentNode;
+      pai.style.backgroundColor = "green";
+      let texto = 'Live long and prosper!';
+      document.getElementById("primeiroFilhoDoFilho").innerText = texto;
+      console.log(pai);
+      console.log(document.getElementById("pai").firstElementChild);
+      console.log(toAqui.previousElementSibling);
+      console.log(toAqui.nextSibling);
+      console.log(toAqui.nextSibling);
+      console.log(pai.lastElementChild.previousElementSibling);
+      let broOndeEstou = document.createElement("div");
+      broOndeEstou.setAttribute("class", "irmaoDeOndeEstou");
+      toAqui.parentNode.appendChild(broOndeEstou);
+      let filhoDoToAki = document.createElement("div");
+      filhoDoToAki.id = "filhoDoElementoOndeVoceEsta";
+      toAqui.appendChild(filhoDoToAki);
+      let primeiroBisneto = document.createElement("div");
+      primeiroBisneto.id = "primeiroBisneto";
+      document.getElementById("primeiroFilhoDoFilho").appendChild(primeiroBisneto);
+      console.log(document.getElementById("primeiroBisneto").parentNode.parentNode.nextElementSibling);
+    </script>
+  </body>
+</html>
