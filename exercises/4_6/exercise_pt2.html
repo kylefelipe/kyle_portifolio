@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Exercício 4.5</title>
+  <style>
+    div {
+      border-color: black;
+      border-style: solid;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .main-content {
+      background-color: yellow;
+    }
+
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .main-content .center-content p {
+      font-style: italic;
+    }
+
+    .main-content .left-content {
+      background-color: green;
+      width: 60%;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .main-content .left-content .small-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+    }
+
+    .main-content .right-content {
+      background-color: blue;
+      width: 60%;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .main-content .description {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function criaElemento(tagElemento, classe) {
+      let elemento = document.createElement(tagElemento);
+      elemento.setAttribute("class", classe);
+      return elemento;
+    }
+    function insereTexto(elemento, texto) {
+      elemento.innerText = texto;
+      return elemento;
+    }
+    function geraLista(vetor) {
+      let lista = document.createElement('ul');
+      for (let ite of vetor) {
+        let item = document.createElement('li');
+        item.innerText = ite;
+        lista.appendChild(item);
+      }
+      return lista;
+    }
+    // Exercício 01
+    // Add tag h1
+    let h1 = criaElemento("h1", "h1-priario");
+    h1 = insereTexto(h1, "Exercício 4.6 - JavaScript DOM ");
+    document.body.appendChild(h1);
+    // Exercício 02
+    // Add div classe main-content
+    let div = criaElemento("div", "main-content");
+    document.body.appendChild(div);
+    // Exercício 03
+    // Add div center-content
+    let childDiv = criaElemento("div", "center-content")
+    div.appendChild(childDiv);
+    // Exercício 04
+    // add tag p
+    let tagP = criaElemento("p", "p-docenter-content");
+    tagP.innerText = "Don't Panic!";
+    childDiv.appendChild(tagP);
+    // Exercício 05
+    let leftDiv = criaElemento("div", "left-content");
+    div.appendChild(leftDiv);
+    // Exercício 06
+    let rightDiv = criaElemento("div", "right-content");
+    div.appendChild(rightDiv);
+    // Exercício 07
+    let imagem1 = criaElemento('img', 'small-image');
+    imagem1.src = 'https://picsum.photos/200';
+    leftDiv.appendChild(imagem1);
+    // Exercicio 08
+    let itensLista = ["um", "dois", "três", "quatro", "cinco", "seis",
+                      "sete", "oito", "nove", "dez"];
+    rightDiv.appendChild(geraLista(itensLista));
+    // Exercício 09
+    for (let item = 0; item < 3; item += 1) {
+      let it = document.createElement("h3");
+      it.innerText = itensLista[item];
+      div.appendChild(it);
+    }
+    h1 = document.getElementsByTagName("h1")[0];
+    h1.setAttribute("class",'title');
+    let h3s = document.getElementsByTagName("h3");
+    for (let tag of h3s) {
+      tag.setAttribute("class", "description");
+    }
+    div.removeChild(leftDiv);
+    let elemento = document.getElementsByClassName("right-content");
+    elemento[0].style.marginRight = "auto";
+    let mudaCor = document.getElementsByClassName("center-content");
+    mudaCor[0].style.backgroundColor = "green";
+    for (let item = 0; item < 2; item++) {
+      let ul = document.getElementsByTagName("ul")[0];
+      ul.removeChild(ul.lastChild);
+    }
+  </script>
+</body>
+</html>
