@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Exercício 4.4</title>
+
+  <style>
+    div {
+      border-color: black;
+      border-style: solid;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .main-content {
+      background-color: yellow;
+    }
+
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .main-content .center-content p {
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title">Exercício 4.5 - JavaEscripito </h1>
+  <div class="main-content">
+    <div id="div-central" class="center-content">
+      <p>Texto padrão do nosso site</p>
+      <p>-----</p>
+      <p>Trybe</p>
+    </div>
+  </div>
+  <script>
+    /*
+    Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
+    - document.getElementById()
+    - document.getElementsByClassName()
+    - document.getElementsByTagName()
+    1. Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
+    2. Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe.
+    3. Crie uma função que mude a cor do quadrado vermelho para branco.
+    4. Crie uma função que corrija o texto da tag <h1>.
+    5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+    6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+    */
+    function mudaTextoTag(texto, tag, indice) {
+      document.getElementsByTagName(tag)[indice].innerText = texto;
+    }
+    function mudarCorDeFundo(cor, classe) {
+      let mudarCorBG = document.getElementsByClassName(classe)[0];
+      mudarCorBG.style.backgroundColor = cor;
+    }
+    function mudarCaixa(nomeTag) {
+      let mudarCaixa = document.getElementsByTagName(nomeTag);
+      for (let tg = 0; tg < mudarCaixa.length; tg += 1) {
+        mudarCaixa[tg].style.textTransform = "uppercase";
+      }
+    }
+    function logTag(nomeTag) {
+      let logTexto = document.getElementsByTagName(nomeTag);
+      for (let tg = 0; tg < logTexto.length; tg += 1) {
+        console.log(logTexto[tg].innerText);
+      }
+    }
+    // Bônus
+    // Cria uma lista
+
+    function geraLista(idObjeto, vetor) {
+      let divLista = document.getElementById(idObjeto);
+      let lista = document.createElement('ol');
+      let att = document.createAttribute("id");
+      att.value = "lista-ordenada";
+      divLista.setAttributeNode(att);
+      divLista.appendChild(lista);
+      for (let indice = 0; indice < vetor.length; indice += 1) {
+        let item = document.createElement('li');
+        if (indice % 2 === 0) {
+          item.setAttribute("class", "par")
+        }
+        else {
+          item.setAttribute("class", "impar");
+        }
+        let valor = document.createTextNode(vetor[indice]);
+        item.appendChild(valor);
+        lista.appendChild(item);
+      }
+      lista.lastChild.setAttribute("class", "par impar");
+    }
+    mudaTextoTag("2 anos mais velho!", "p", 1);
+    mudarCorDeFundo("#0fa36b", "main-content");
+    mudarCorDeFundo("white", "center-content");
+    mudaTextoTag("Exercício 4.5 - JavaScript", "h1", 0);
+    mudarCaixa("p");
+    logTag("p");
+    let vetor = [42, 23, 73, 3.14]
+    geraLista("div-central", vetor)
+  </script>
+</body>
+
+</html>
