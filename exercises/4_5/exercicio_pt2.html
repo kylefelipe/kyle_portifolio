@@ -35,7 +35,7 @@
 <body>
   <h1 class="title">Exercício 4.5 - JavaEscripito </h1>
   <div class="main-content">
-    <div class="center-content">
+    <div id="div-central" class="center-content">
       <p>Texto padrão do nosso site</p>
       <p>-----</p>
       <p>Trybe</p>
@@ -73,14 +73,38 @@
         console.log(logTexto[tg].innerText);
       }
     }
+    // Bônus
+    // Cria uma lista
+
+    function geraLista(idObjeto, vetor) {
+      let divLista = document.getElementById(idObjeto);
+      let lista = document.createElement('ol');
+      let att = document.createAttribute("id");
+      att.value = "lista-ordenada";
+      divLista.setAttributeNode(att);
+      divLista.appendChild(lista);
+      for (let indice = 0; indice < vetor.length; indice += 1) {
+        let item = document.createElement('li');
+        if (indice % 2 === 0) {
+          item.setAttribute("class", "par")
+        }
+        else {
+          item.setAttribute("class", "impar");
+        }
+        let valor = document.createTextNode(vetor[indice]);
+        item.appendChild(valor);
+        lista.appendChild(item);
+      }
+      lista.lastChild.setAttribute("class", "par impar");
+    }
     mudaTextoTag("2 anos mais velho!", "p", 1);
     mudarCorDeFundo("#0fa36b", "main-content");
     mudarCorDeFundo("white", "center-content");
     mudaTextoTag("Exercício 4.5 - JavaScript", "h1", 0);
     mudarCaixa("p");
     logTag("p");
-
-
+    let vetor = [42, 23, 73, 3.14]
+    geraLista("div-central", vetor)
   </script>
 </body>
 
