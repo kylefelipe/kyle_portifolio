@@ -61,7 +61,7 @@
   <script>
     function criaElemento(tagElemento, classe) {
       let elemento = document.createElement(tagElemento);
-      elemento.class = classe;
+      elemento.setAttribute("class", classe);
       return elemento;
     }
     function insereTexto(elemento, texto) {
@@ -70,9 +70,9 @@
     }
     function geraLista(vetor) {
       let lista = document.createElement('ul');
-      for (let indice = 0; indice < vetor.length; indice += 1) {
+      for (let ite of vetor) {
         let item = document.createElement('li');
-        item.innerText = vetor[indice];
+        item.innerText = ite;
         lista.appendChild(item);
       }
       return lista;
@@ -115,13 +115,21 @@
       it.innerText = itensLista[item];
       div.appendChild(it);
     }
-
+    h1 = document.getElementsByTagName("h1")[0];
+    h1.setAttribute("class",'title');
+    let h3s = document.getElementsByTagName("h3");
+    for (let tag of h3s) {
+      tag.setAttribute("class", "description");
+    }
+    div.removeChild(leftDiv);
+    let elemento = document.getElementsByClassName("right-content");
+    elemento[0].style.marginRight = "auto";
+    let mudaCor = document.getElementsByClassName("center-content");
+    mudaCor[0].style.backgroundColor = "green";
+    for (let item = 0; item < 2; item++) {
+      let ul = document.getElementsByTagName("ul")[0];
+      ul.removeChild(ul.lastChild);
+    }
   </script>
 </body>
-
 </html>
-
-<!-- A aula d hoje, se fosse um quadro,  o lucas seria Pablo Picasso.
-Se fosse música, ele seria o Vander Lee.
-Se fosse poesia, ele seria Olavo Bilac. -->
-<!-- Se fosse química, ele seria Marie Curie. -->
