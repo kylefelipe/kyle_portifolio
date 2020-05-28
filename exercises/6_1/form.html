@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <fieldset>
+    <label for="nome-candidato">Nome</label>
+    <input type="text" id="nome-candidato" maxlength="40" required="required"/>
+    <label for="email-candidato">E-mail</label>
+    <input type="text" id="email-candidato" maxlength="50" required="required"/>
+    <label for="cpf-candidato">CPF</label>
+    <input type="text" id="cpf-candidato" maxlength="11" required="required"/>
+    <label for="unidade-federativa">Estado</label>
+    <select name="uf" id="unidadde-federativa" required="required"></select>
+    <label for="municipio">Cidade</label>
+    <input type="text"
+      name="municipio"
+      id="municipio"
+      placeholder="Digite aqui seu município"
+      required="required"
+      maxlength="28"/>
+    <textarea 
+      name="apresentacao" 
+      id="apresentacao" 
+      cols="100"
+      rows="10"
+      maxlength="200"
+      placeholder="Apresente-se!"
+      required="required"></textarea>
+  </fieldset>
+  
+  <script src="script.js"></script>
+</body>
+</html>
