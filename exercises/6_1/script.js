@@ -27,6 +27,9 @@ const stateList = [
   ['Sergipe', 'SE'],
   ['Tocantins', 'TO']
 ];
+
+
+
 const unidadeFederativa = document.getElementById('unidade-federativa');
 
 function adicionaEstados() {
@@ -35,9 +38,20 @@ function adicionaEstados() {
     estado.value = stateList[uf][1];
     estado.innerText = stateList[uf][0];
     unidadeFederativa.appendChild(estado);
-    console.log(estado);
   }
 }
 window.onload = function () {
   adicionaEstados();
+}
+
+const pattern = /^([0-9]{0,2})\/([0-9]{2})\/([0-9]{4})$/;
+const dataInicio = document.getElementById('data-inicio');
+dataInicio.addEventListener("change", function(){
+  validaData();
+});
+
+function validaData(){
+  if (dataInicio.value.match(pattern) === null){
+    alert("Formato de data não válido! Digite: DD/MM/AAAA");
+  }
 }

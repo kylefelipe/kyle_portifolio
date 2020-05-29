@@ -56,25 +56,28 @@
         id="cargo"
         maxlength="40"
         required="required"/>
-      <label for="cargo-descricao">Descrição'</label>
+      <label for="cargo-descricao">Descrição</label>
       <input
         type="text"
         name="cargo"
         id="cargo-descricao"
         maxlength="40"
         required="required"/>
-
+      <label for="data-">Data de início</label>
+      <input type="text" id="data-inicio" />
       <textarea 
         name="resumo" 
         id="resumo" 
         cols="100"
         rows="10"
         maxlength="1000"
-        placeholder="Descreva!"
+        placeholder="Resumo do CV!"
         required="required"></textarea>
     </fieldset>
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpar</button>
   </form>
-  
+  <div class="dados-enviar"></div>
   <script src="script.js"></script>
 </body>
 </html>
