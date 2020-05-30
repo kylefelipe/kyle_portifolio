@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="" method="get">
+    <fieldset>
+      <section class="pessoais-candidato">
+        <label for="nome-candidato">Nome</label>
+        <input type="text" id="nome-candidato" maxlength="40" required="required"/>
+        <label for="cpf-candidato">CPF</label>
+        <input type="text" id="cpf-candidato" maxlength="11" required="required"/>
+        <label for="email-candidato">E-mail</label>
+        <input type="text" id="email-candidato" maxlength="50" required="required"/>
+      </section>
+      <section class="localizacao-usuario">
+        <label for="endereco">Endereço</label>
+        <input name="endereco" id="endereco" required="required"></input>
+        <label for="unidade-federativa">Estado</label>
+        <select name="uf"
+          id="unidade-federativa" 
+          required="required"></select>
+
+        <label for="municipio">Municipio</label>
+        <select name="mnUf"
+          id="municipio" 
+          required="required"></select>
+
+        <section class="tipo-logradouro">
+          <label for="tipo-casa">Casa</label>
+          <input type="radio"
+            name="tipo-residencia"
+            id="tipo-casa"
+            value="casa"
+            required="required"
+            />
+          <label for="tipo-apto">Apartamento</label>
+          <input type="radio"
+            name="tipo-residencia"
+            id="tipo-apto"
+            value="apto"
+            />
+        </section>
+      </section>
+    </fieldset>
+    <fieldset class="last-eployee">
+      <label for="cargo">Cargo</label>
+      <input
+        type="text"
+        name="cargo"
+        id="cargo"
+        maxlength="40"
+        required="required"/>
+      <label for="cargo-descricao">Descrição</label>
+      <input
+        type="text"
+        name="cargo"
+        id="cargo-descricao"
+        maxlength="40"
+        required="required"/>
+      <label for="data-">Data de início</label>
+      <input type="text" id="data-inicio" />
+      <textarea 
+        name="resumo" 
+        id="resumo" 
+        cols="100"
+        rows="10"
+        maxlength="1000"
+        placeholder="Resumo do CV!"
+        required="required"></textarea>
+    </fieldset>
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpar</button>
+  </form>
+  <div class="dados-enviar"></div>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
