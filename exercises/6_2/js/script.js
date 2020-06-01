@@ -5673,13 +5673,25 @@ function populaSelecao(opcoes, elemento) {
 
 const pattern = /^([0-9]{0,2})\/([0-9]{2})\/([0-9]{4})$/;
 const dataInicio = document.getElementById('data-inicio');
-dataInicio.addEventListener("change", function(){
+dataInicio.addEventListener("focusout", function(){
   validaData();
 });
 
 function validaData(){
-  if (dataInicio.value.match(pattern) === null){
-    alert("Formato de data não válido! Digite: DD/MM/AAAA");
+  const dataLastJob = dataInicio.value;
+  console.log(parseInt(dataLastJob.slice(0, 2)));
+  if (dataLastJob.match(pattern) === null){
+    alert("Formato de data não válido! Digite: DD/MM/AAAA!");
+    dataInicio.focus();
+  } else if (parseInt(dataLastJob.slice(0, 2)) <= 0 || parseInt(dataLastJob.slice(0, 2)) > 31) {
+    alert("O dia deve ser entre 1 e 31!");
+    dataInicio.focus();
+  } else if (parseInt(dataLastJob.slice(3, 5)) <= 0 || parseInt(dataLastJob.slice(3, 5)) > 12) {
+    alert("O mês deve ser entre 1 e 12!");
+    dataInicio.focus();
+  } else if (parseInt(dataLastJob.slice(6,)) <= 0) {
+    alert("O ano deve ser positivo!");
+    dataInicio.focus();
   }
 }
 
