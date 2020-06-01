@@ -5671,9 +5671,11 @@ function populaSelecao(opcoes, elemento) {
   }
 }
 
-const pattern = /^([0-9]{0,2})\/([0-9]{2})\/([0-9]{4})$/;
 const dataInicio = document.getElementById('data-inicio');
 dataInicio.DatePickerX.init({format: 'dd/mm/yyyy'});
+
+validation.init('#email');
+
 
 window.onload = function () {
   populaSelecao(stateList, unidadeFederativa);
