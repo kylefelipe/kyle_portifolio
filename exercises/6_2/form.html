@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco de talentos</title>
+  <link rel="stylesheet" href="css/bulma.min.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/DatePickerX.min.css">
+  <link rel="stylesheet" href="css/validation.min.css">
+  <script src="https://kit.fontawesome.com/06a65d400a.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/validation.min.js"></script>
+  <script src="js/DatePickerX.min.js"></script>
+</head>
+<body>
+  <h1 class="title has-text-centered">Banco de talentos</h1>
+  <section class="section">
+    <form action="" method="get" class="banco-talentos">
+      <div class="field pessoais-candidato">
+        <div class="control">
+          <label class="label" for="nome-candidato">Nome</label>
+          <input class="input is-primary" type="text" id="nome-candidato" maxlength="40" required="required"/>
+          <label for="cpf-candidato">CPF</label>
+          <input class="input is-primary" type="text" id="cpf-candidato" maxlength="11" required="required"/>
+          <label for="email-candidato">E-mail</label>
+          <div class="field" id="email" >
+            <p class="control has-icons-left">
+              <input
+                type="email"
+                class="input is-primary validate" data-validate="required, email"
+                type="text"
+                id="email-candidato"
+                maxlength="50"
+                required="required"
+                placeholder="E-mail"/>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </p>
+          </div>
+        </div>
+        <small class="content"> Seus dados não serão compartilhados!</small>
+      </div>
+      <div class="field localizacao-usuario">
+        <div class="control">
+          <label class="label" for="endereco">Endereço</label>
+          <input class="input is-primary" name="endereco" id="endereco" required="required"></input>
+        </div>
+        <div class="control">
+          <div class="tipo-logradouro control">
+            <label class="radio" class="form-check-label" for="casa">
+              <input
+                type="radio"
+                name="tipo-residencia"
+                id="casa"
+                value="casa"
+                required="required"/>
+              Casa</label>
+              <label class="radio" class="form-check-label" for="tipo-apto">
+                <input
+                  type="radio"
+                  name="tipo-residencia"
+                  id="tipo-apto"
+                  value="apto"/>
+              Apartamento</label>
+          </div>
+        </div>
+        <div class="columns is-vcentered">
+          <div class="column">
+            <div class="control">
+              <label class="label" for="unidade-federativa">Estado</label>
+              <div class="select is-rounded is-primary">
+                <select name="uf" class="select is-rounded"
+                id="unidade-federativa" 
+                required="required"></select>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="control">
+              <label class="label" for="municipio">Municipio</label>
+              <div class="select is-rounded is-primary is-focused">
+                <select name="mnUf" class="select is-rounded"
+                id="municipio" 
+                required="required"></select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="field last-eployee">
+        <div class="control">
+          <label class="label" for="cargo">Cargo</label>
+          <input class="input"
+            type="text"
+            name="cargo"
+            id="cargo"
+            maxlength="40"
+            required="required"/>
+          <label class="label" for="cargo-descricao">Descrição</label>
+          <input class="input"
+            type="text"
+            name="cargo"
+            id="cargo-descricao"
+            maxlength="40"
+            required="required"/>
+          <label class="label" for="data-">Data de início</label>
+          <div class="field">
+            <input class="input" type="text" id="data-inicio"/>
+          </div>
+        </div>
+        <label class="label" for="resumo">
+          Resumo do currículo!
+        </label>
+        <textarea class="textarea"
+          name="resumo" 
+          id="resumo" 
+          cols="100"
+          rows="5"
+          maxlength="1000"
+          placeholder="Resumo do CV!"
+          required="required"></textarea>
+        <small class="content">Resuma seu currículo em 1000 caracteres!</small>
+      </div>
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-success">Enviar</button>
+        </div>
+        <div class="control">
+          <button class="button is-danger">Limpar</button>
+        </div>
+      </div>
+    </form>
+  </section>
+  <div class="dados-enviar"></div>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
