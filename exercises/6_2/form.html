@@ -6,9 +6,11 @@
   <title>Banco de talentos</title>
   <link rel="stylesheet" href="css/bulma.min.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/DatePickerX.min.css">
   <script src="https://kit.fontawesome.com/06a65d400a.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script src="js/DatePickerX.min.js"></script>
 </head>
 <body>
   <h1 class="title has-text-centered">Banco de talentos</h1>
@@ -103,7 +105,9 @@
             maxlength="40"
             required="required"/>
           <label class="label" for="data-">Data de início</label>
-          <input class="input" type="text" id="data-inicio"/>
+          <div class="field">
+            <input class="input" type="text" id="data-inicio"/>
+          </div>
         </div>
         <label class="label" for="resumo">
           Resumo do currículo!
