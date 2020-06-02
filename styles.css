@@ -3,8 +3,8 @@ body{
     background-color: #0B132B ;
     font-size: 20px;
     color: #6FFFE9;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: auto;
+    width: 80%;
 }
 em{
     font-weight: bold;
@@ -18,29 +18,26 @@ ul {
     font-size: 3em;
     text-align: center;
 }
-#skills-list{
-    font-family: 'Courier New', Courier, monospace;
+#conteudo {
     color: #028090 ;
-    text-align: center;
-    display: table;
-    flex-direction: row;
-    flex-wrap: wrap;
+    font-family: 'Courier New', Courier, monospace;
 }
-.faixa li {
-    float: none;
-    display: inline-block;
-    /*text-align: center;*/
-    margin: 0.5em;
-    padding:0.5em;
+.item {
+    align-items: center;
     background-color: bisque;
-    width: 10em;
+    border: 1px solid blueviolet;
     border-radius: 0.5em;
+    display: flex;
+    height: 3em;
+    justify-content: center;
+    margin: 5px;
     text-transform: uppercase;
+    width: 11em;
 }
 .descricao{
     color: #4ecdc4;
-    font-style: italic;
     font-size: 1.5em;
+    font-style: italic;
     font-weight: bolder;
 }
 .strong-skill{
@@ -53,26 +50,29 @@ ul {
     color: #0fa36b;
 }
 .faixa{
-    margin-top: 0.5em;
-    border-radius: 5px;
-    position:relative;
     background-color: #1C2541;
-    width: 100%;
-    top: 0.5em;
-    align-items: center;
-    padding-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5em;
     padding-bottom: 5px;
+    padding-top: 5px;
+    position:relative;
     text-align: center;
+    top: 0.5em;
+    width: 100%;
 }
 #container{
-    position: relative;
     align-items: center;
     display: inline-flex;
     flex-direction: row;
+    height: 17em;
     justify-content: space-around;
+    position: relative;
     top: 0.3em;
     width: 100%;
-    height: 17em;
 }
 #mypicture{
     border-radius: 15% ;
@@ -80,15 +80,15 @@ ul {
 }
 .apresentacao{
     font-size: 1.25em;
-    text-align: center;
-    max-width: 60%;
     float: left;
+    max-width: 60%;
+    text-align: center;
     vertical-align: middle;
 }
 .minha-foto{
-    vertical-align: middle;
-    padding: 0.5em;
     float: right;
+    padding: 0.5em;
+    vertical-align: middle;
 }
 .redes-sociais{
     position: relative;
@@ -96,27 +96,26 @@ ul {
     top:20em;
 }
 #end-buttons{
-    list-style-type: none;
-    float: none;
     display: inline-block;
-    text-align: center;
+    float: none;
     position: relative;
-    /*align-items: center;*/
+    text-align: center;
 }
 #end-buttons li{
-    justify-content: space-around;
-    float: left;
     border-radius: 10px;
     background-color: unset;
     text-transform: none;
 }
 .button{
-    height: 2.1em;
+    align-items: center;
     background-color: #432371;
     border-radius: 10px;
-    padding: 15px 30px;
     color:white;
-    text-decoration: none;
+    display: flex;
     font-size: 1.1em;
     font-weight: 700;
+    height: 2em;
+    justify-content: center;
+    padding: 15px 30px;
+    text-decoration: none;
 }
