@@ -70,4 +70,11 @@ const somaAluno = contaAlgo(allLessons, 'numeroEstudantes');
 
 const getValueByNumber = (obj, position) => obj[Object.keys(obj)[position]];
 
-console.log(getValueByNumber(lesson1, 0));
+// console.log(getValueByNumber(lesson1, 0));
+
+// Exercicio 08: verificar se o par (chave, valor) existe no objeto.
+
+const verifyPair = (obj, chave, valor) => obj[chave] === valor? true:false;
+
+console.log(verifyPair(lesson3, 'turno', 'noite'));
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
