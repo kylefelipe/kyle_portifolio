@@ -31,3 +31,8 @@ console.log(lesson2);
 const listarKeys = objToList => Object.keys(objToList);
 
 console.log(listarKeys(lesson1));
+
+// Exercício 3, mostrar o tamanho de um objeto.
+
+const objLength = obj => listarKeys(obj).length;
+console.log(objLength(lesson3));
