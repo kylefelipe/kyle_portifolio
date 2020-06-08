@@ -42,3 +42,8 @@ console.log(objLength(lesson3));
 const listarValues = objToList => Object.values(objToList);
 console.log(listarValues(lesson1));
 
+// Exercício 4, adicionar aulas em um objeto único
+
+const allLessons = (lesson1, lesson2, lesson3) => Object.assign({}, {"lesson1":lesson1}, {"lesson2": lesson2}, {"lesson3": lesson3});
+console.log(allLessons(lesson1, lesson2, lesson3));
+
