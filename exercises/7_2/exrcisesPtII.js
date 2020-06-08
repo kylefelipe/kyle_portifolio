@@ -44,11 +44,15 @@ const listarValues = objToList => Object.values(objToList);
 
 // Exercício 5, adicionar aulas em um objeto único
 
-const allLessons = Object.assign({lesson1: lesson1}, {lesson2: lesson2}, {lesson3: lesson3});
+function groupObjects(objs) {
+  return Object.assign({}, objs);
+}
+
+const allLessons = groupObjects({lesson1, lesson2, lesson3});
 console.log(allLessons);
 
 // Exercício 06, pegar numero de estudantes.
-console.log(typeof allLessons);
+// console.log(typeof allLessons);
 const somaAluno = allLessons.reduce((sum, classes) => {return sum + classes.numeroEstudantes}, 0);
 
-console.log(somaAluno);
+// console.log(somaAluno);
