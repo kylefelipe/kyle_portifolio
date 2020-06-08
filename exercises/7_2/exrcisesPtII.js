@@ -18,6 +18,10 @@ const lesson3 = {
   turno: 'noite',
 };
 
+// Execício 1, função que adicione novas entradas em um objeto.
 function insertObject(objTarget, keyInsert, valueInsert) {
   objTarget[keyInsert] = valueInsert;
 }
+
+insertObject(lesson2, 'turno', 'manhã');
+console.log(lesson2);
