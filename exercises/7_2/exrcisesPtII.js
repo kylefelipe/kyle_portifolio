@@ -49,10 +49,18 @@ function groupObjects(objs) {
 }
 
 const allLessons = groupObjects({lesson1, lesson2, lesson3});
-console.log(allLessons);
+// console.log(allLessons);
 
 // Exercício 06, pegar numero de estudantes.
-// console.log(typeof allLessons);
-const somaAluno = allLessons.reduce((sum, classes) => {return sum + classes.numeroEstudantes}, 0);
 
-// console.log(somaAluno);
+function contaAlgo(obj, prop) {
+  let alunos = 0;
+  const lessons = Object.keys(obj);
+  for (lesson in lessons) {
+    alunos += obj[lessons[lesson]][prop];
+  }
+  return alunos
+}
+const somaAluno = contaAlgo(allLessons, 'numeroEstudantes');
+
+console.log(somaAluno);
