@@ -25,3 +25,9 @@ function insertObject(objTarget, keyInsert, valueInsert) {
 
 insertObject(lesson2, 'turno', 'manhã');
 console.log(lesson2);
+
+// Exercício 2, função para listar chaves de um objeto.
+
+const listarKeys = objToList => Object.keys(objToList);
+
+console.log(listarKeys(lesson1));
