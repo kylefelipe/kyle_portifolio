@@ -24,26 +24,31 @@ function insertObject(objTarget, keyInsert, valueInsert) {
 }
 
 insertObject(lesson2, 'turno', 'manhã');
-console.log(lesson2);
+// console.log(lesson2);
 
 // Exercício 2, função para listar chaves de um objeto.
 
 const listarKeys = objToList => Object.keys(objToList);
 
-console.log(listarKeys(lesson1));
+// console.log(listarKeys(lesson1));
 
 // Exercício 3, mostrar o tamanho de um objeto.
 
 const objLength = obj => listarKeys(obj).length;
-console.log(objLength(lesson3));
+// console.log(objLength(lesson3));
 
 // Exercício 4, Listar valores de um objeto.
 
 const listarValues = objToList => Object.values(objToList);
-console.log(listarValues(lesson1));
+// console.log(listarValues(lesson1));
 
-// Exercício 4, adicionar aulas em um objeto único
+// Exercício 5, adicionar aulas em um objeto único
 
-const allLessons = (lesson1, lesson2, lesson3) => Object.assign({}, {"lesson1":lesson1}, {"lesson2": lesson2}, {"lesson3": lesson3});
-console.log(allLessons(lesson1, lesson2, lesson3));
+const allLessons = Object.assign({lesson1: lesson1}, {lesson2: lesson2}, {lesson3: lesson3});
+console.log(allLessons);
 
+// Exercício 06, pegar numero de estudantes.
+console.log(typeof allLessons);
+const somaAluno = allLessons.reduce((sum, classes) => {return sum + classes.numeroEstudantes}, 0);
+
+console.log(somaAluno);
