@@ -68,6 +68,6 @@ const somaAluno = contaAlgo(allLessons, 'numeroEstudantes');
 // Exercício 07, retornando valor conforme a posição
 
 
-const getValueByNumber = (obj, position) => obj[Object.keys(obj)[position]]
+const getValueByNumber = (obj, position) => obj[Object.keys(obj)[position]];
 
 console.log(getValueByNumber(lesson1, 0));
