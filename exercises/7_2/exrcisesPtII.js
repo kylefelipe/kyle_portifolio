@@ -36,3 +36,9 @@ console.log(listarKeys(lesson1));
 
 const objLength = obj => listarKeys(obj).length;
 console.log(objLength(lesson3));
+
+// Exercício 4, Listar valores de um objeto.
+
+const listarValues = objToList => Object.values(objToList);
+console.log(listarValues(lesson1));
+
