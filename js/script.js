@@ -34,11 +34,26 @@ social = {
                 'icone': ['my-icon', 'fab', 'fa-instagram']
               },
   'Youtube': {
-              'link': 'https://www.youtube.com/thinkfreegeo',
-              'icone': ['my-icon', 'fab', 'fa-youtube']
-            },
+    'link': 'https://www.youtube.com/thinkfreegeo',
+    'icone': ['my-icon', 'fab', 'fa-youtube']
+  },
+  'Whatsapp': {
+    'link': 'https://api.whatsapp.com/send?phone=5531993084962&text=Oi, te encontrei pelo seu portifólio',
+    'icone': ['my-icon', 'fab', 'fa-whatsapp']
+  },
+  'ThinkFree (Whatsap)': {
+    'link': 'https://chat.whatsapp.com/E3HeXxP70bqFv8ybfbbV0W',
+    'icone': ['my-icon', 'fab', 'fa-whatsapp'],
+  },
+  'Telegram': {
+    'link': 'https://t.me/Kyle_Felipe',
+    'icone': ['my-icon', 'fab', 'fa-telegram-plane'],
+  },
+  'ThinkFree (Telegram)': {
+    'link': 'https://t.me/thinkfreeqgis',
+    'icone': ['my-icon', 'fab', 'fa-telegram-plane'],
+  },
 }
-
 conteudos = {}
 
 function createElement(elmt, classes, text) {
