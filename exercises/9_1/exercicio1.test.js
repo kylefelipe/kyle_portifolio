@@ -21,7 +21,7 @@ describe('Testando o exercicio_testes_1', () => {
 });
 
 const arrayTeste = [1, 2, 3, 4];
-const arrayExpected = [1, 2, 4];
+const arrayExpected = [1, 2, 4];q
 const arrayTeste2 = [1, -2, -3, 4];
 
 describe( 'Testando o exercicio_testes_2', () => {
