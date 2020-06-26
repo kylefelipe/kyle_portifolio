@@ -1,14 +1,16 @@
 const API_URL = 'https://icanhazdadjoke.com/';
+const container = document.getElementById('jokeContainer');
 
 const fetchJoke = () => {
+  fetch(API_URL, myObject)
+    .then(response => response.json())
+    .then(data => {container.innerHTML = data.joke});
 
 }
 
 const myObject = {
   method: 'GET',
-  headers: { 'Accept': 'application/json' };
+  headers: { 'Accept': 'application/json' },
 }
 
-fetch(API_URL, myObject);
-
-windows.onload = () => fetchJoke();
+window.onload = () => fetchJoke();
