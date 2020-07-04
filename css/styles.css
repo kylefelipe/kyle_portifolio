@@ -59,6 +59,10 @@ em {
   
 }
 
+.external-links:visited {
+  color: #a8dadc;
+}
+
 .my-item:hover {
   border: 1px solid ;
   border-image-source: linear-gradient(45deg,transparent,#2196f3);
@@ -77,9 +81,9 @@ em {
 
 @keyframes animate1 {
   0% {
-    box-shadow: 0 0 10px #2196f3,
-                0 0 40px #2196f3,
-                0 0 80px #2196f3;
+    box-shadow: 0 0 10px #0e3758,
+                0 0 40px #0e3758,
+                0 0 80px #0e3758;
     transition-delay: 0.1s;
 
   }
@@ -107,7 +111,6 @@ em {
 }
 
 .faixa {
-
   border-radius: 25px;
   display: flex;
   flex-direction: row;
