@@ -1,4 +1,4 @@
-habilidades = {
+const habilidades = {
   'linux': ['my-icon', 'fab', 'fa-linux'],
   'Python': ['my-icon', 'fab', 'fa-python'],
   'JavaScript': ['my-icon', 'fab', 'fa-js-square'],
@@ -17,7 +17,7 @@ habilidades = {
   'Github':['my-icon', 'fab', 'fa-github'],
 }
 
-social = {
+const social = {
   'Gitlab': {
               'link': 'https://www.gitlab.com/kylefelipe',
               'icone': ['my-icon', 'fab', 'fa-gitlab']
@@ -54,13 +54,12 @@ social = {
     'icone': ['my-icon', 'fab', 'fa-telegram-plane'],
   },
 }
-conteudos = {}
+
+const conteudos = {}
 
 function createElement(elmt, classes, text) {
   const element = document.createElement(elmt);
-  for (let cls = 0; cls < classes.length; cls += 1){
-    element.classList.add(classes[cls]);
-  }
+  classes.forEach(item => {element.classList.add(item)})
   element.append(text);
   return element;
 }
@@ -81,6 +80,7 @@ function createFindMe() {
   for (const rede in social ) {
     const item = createElement('li', ['my-item'], '');
     const ancora = document.createElement('a');
+    ancora.setAttribute('class', 'external-links');
     ancora.setAttribute('target', '_blank');
     ancora.setAttribute('href', social[rede].link);
     ancora.append(rede);
