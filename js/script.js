@@ -55,44 +55,76 @@ const social = {
   },
 }
 
-const conteudos = {}
+const conteudos = {
+  'Apostila Qgis 3x': {
+    link: 'https://kylefelipe.gitlab.io/apostila_qgis_3/',
+  },
+  'Curso de Linux Bash & Shell': {
+    link: 'https://kylefelipe.gitlab.io/bash_shell/',
+  },
+}
 
-function createElement(elmt, classes, text) {
-  const element = document.createElement(elmt);
-  classes.forEach(item => {element.classList.add(item)})
-  element.append(text);
-  return element;
+const palestras = {
+  'Qualidade de Dados Espaciais e Python': {
+    link: 'https://gitlab.com/kylefelipe/palestra_cbgeo_2019',
+  }
+}
+
+
+function customElement(elmt, classes, text) {
+  const siteElement = document.createElement(elmt);
+  if (classes) classes.forEach(item => {siteElement.classList.add(item)});
+  if (text) siteElement.append(text);
+  return siteElement;
+}
+
+function createAnchor(classList, text, target, href) {
+  const ancora = customElement('a', classList, text);
+  if (target) ancora.setAttribute('target', target);
+  if (href) ancora.setAttribute('href', href);
+  return ancora;
 }
 
 function createHabilities() {
   const sect = document.getElementById('habilidades');
-  for (const hab in habilidades) {
+  Object.keys(habilidades).forEach( hab => {
     const classes = ['my-item', 'habilidade'];
-    const item = createElement('li', classes, hab)
-    const icon = createElement('i', habilidades[hab], '')
+    const item = customElement('li', classes, hab)
+    const icon = customElement('i', habilidades[hab])
     item.prepend(icon);
     sect.appendChild(item);
-  }
+  })
+}
+
+function createArtigosPalestras() {
+  const sect = document.getElementById('artigos-palestras-conteudo');
+  const contents = {...conteudos, ...palestras}
+  Object.keys(contents).forEach(item => {
+    const artPalestra = customElement('li', ['my-item']);
+    const ancora = createAnchor(['external-links'], item, '_blank',
+      contents[item].link);
+    artPalestra.appendChild(ancora);
+    sect.appendChild(artPalestra);
+  })
 }
 
 function createFindMe() {
   const sect = document.getElementById('find-me');
-  for (const rede in social ) {
-    const item = createElement('li', ['my-item'], '');
-    const ancora = document.createElement('a');
-    ancora.setAttribute('class', 'external-links');
-    ancora.setAttribute('target', '_blank');
-    ancora.setAttribute('href', social[rede].link);
-    ancora.append(rede);
-    const icone = createElement('i', social[rede].icone,'')
+  Object.keys(social).forEach(item => {
+    const socialNetwork = customElement('li', ['my-item']);
+    const ancora = createAnchor(['external-links'], item, '_blank', social[item].link);
+    const icone = customElement('i', social[item].icone);
     ancora.prepend(icone);
-    item.appendChild(ancora);
-    sect.appendChild(item)
-  }
-  
+    socialNetwork.appendChild(ancora);
+    sect.appendChild(socialNetwork);
+  });
 }
 
 window.onload = function () {
   createHabilities()
+  createArtigosPalestras()
   createFindMe()
 }
+
+
+
