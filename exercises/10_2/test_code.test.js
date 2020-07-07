@@ -2,6 +2,7 @@ const sourceCode = require('./source_code');
 
 const usarNosTestes = {
   texto: 'Um texto qualquer',
+  outroTexto: 'outro texto qualquer',
 }
 
 describe('Testando a primeira função do exercício!', () => {
@@ -31,16 +32,24 @@ describe('Testando a primeira função do exercício!', () => {
   });
 });
 
-const sourceCode2 = require('./source_code2');
+const srcCode2 = require('./source_code2');
 
-describe('Testando a segunda função do exercício!', () => {
-  it('A função deve receber uma string e retornar em caixa alta!', () => {
-    expect(sourceCode2.highBox(usarNosTestes.texto)).toBe(usarNosTestes.texto.toUpperCase());
+describe('Criar um novo arquivo (módulo) e criar 3 funções, antes do mocking!', () => {
+  it('Deve haver 3 funções!', () => {
+    const items = Object.keys(srcCode2);
+    const isFunction = items.map(item => typeof srcCode2[item] === 'function').filter(item => item === true);
+    expect(isFunction.length).toBe(3);
+    });
+  it('A primeira função deve receber uma string e retornar em caixa alta!', () => {
+    expect(srcCode2.highBox(usarNosTestes.texto)).toBe(usarNosTestes.texto.toUpperCase());
+  });
+  it('A segunda função deve receber uma string e retornar apenas a primeira letra!', () => {
+    expect(srcCode2.firstCharacter(usarNosTestes.texto)).toBe(usarNosTestes.texto[0]);
+  });
+  it('A terceira função deve receber duas strings e retornar sua concatenação!', () => {
+    expect(srcCode2.concatStr(usarNosTestes.texto, usarNosTestes.outroTexto)).toBe(`${usarNosTestes.texto}${usarNosTestes.outroTexto}`);
   });
 });
 
-describe('Testando a terceira função do exercício!', () => {
-  it('A função deve receber uma string e retornar apenas a primeira letra!', () => {
-    expect(sourceCode2.firstCharacter(usarNosTestes.texto).toBe(usarNosTestes.texto[0]));
-  });
+describe('Fazer o mocking do módulo criado anteriormente!', () => {
 });
