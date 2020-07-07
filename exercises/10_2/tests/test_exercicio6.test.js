@@ -1,0 +1,2 @@
+const dogPic = require('../dogPic');
+
