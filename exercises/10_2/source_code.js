@@ -3,9 +3,6 @@ const randomNumber = () => {
   return Math.round(randNumer);
 };
 
-const highBox = (string) => string.toUpperCase();
-
 module.exports = {
   randomNumber,
-  highBox,
 }

@@ -31,14 +31,16 @@ describe('Testando a primeira função do exercício!', () => {
   });
 });
 
+const sourceCode2 = require('./source_code2');
+
 describe('Testando a segunda função do exercício!', () => {
   it('A função deve receber uma string e retornar em caixa alta!', () => {
-    expect(sourceCode.highBox(usarNosTestes.texto)).toBe(usarNosTestes.texto.toUpperCase());
+    expect(sourceCode2.highBox(usarNosTestes.texto)).toBe(usarNosTestes.texto.toUpperCase());
   });
 });
 
 describe('Testando a terceira função do exercício!', () => {
   it('A função deve receber uma string e retornar apenas a primeira letra!', () => {
-    expect(sourceCode.firsCharacter(usarNosTestes.texto).toBe(usarNosTestes.texto[0]));
+    expect(sourceCode2.firstCharacter(usarNosTestes.texto).toBe(usarNosTestes.texto[0]));
   });
 });
