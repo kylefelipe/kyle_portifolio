@@ -35,7 +35,7 @@ describe('Testando a primeira função do exercício!', () => {
 const srcCode2 = require('./source_code2');
 jest.mock('./source_code2');
 
-describe('Criar um novo arquivo (módulo) e criar 3 funções, e testar antes e depois de mockar!', () => {
+describe('Criar um novo arquivo (módulo) e criar 3 funções, e testar antes e depois de mockar! Ex 4.', () => {
   it('Deve haver 3 funções!', () => {
     const items = Object.keys(srcCode2);
     const isFunction = items.map(item => typeof srcCode2[item] === 'function').filter(item => item === true);
