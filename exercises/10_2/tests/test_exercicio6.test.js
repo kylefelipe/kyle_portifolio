@@ -1,23 +1,27 @@
 const dogPic = require('../dogPic');
 
 describe('Criar uma função que faça uma requisição para a api dog pictures', () => {
-  const caoburao = jest.spyOn( dogPic, 'carrocinha');
-  afterEach(caoburao.mockReset());
-  test('Testando se a promisse resolve!', async () => {
-    dogPic.carrocinha.mockResolvedValue('sucessuuu');
-    dogPic.carrocinha();
-    expect(dogPic.carrocinha).toHaveBeenCalled();
-    expect(dogPic.carrocinha).toHaveBeenCalledTimes(1);
-    expect(dogPic.carrocinha()).resolves.toBe('sucessuuu');
-    expect(dogPic.carrocinha).toHaveBeenCalledTimes(2);
+  let caoburao = jest.spyOn( dogPic, 'carrocinha');
+  afterEach(() => {
+    caoburao.mockRestore();
+    caoburao = jest.spyOn( dogPic, 'carrocinha');
   });
   
-  test('Testando quando a promisse não resolve!', async () => {
-    dogPic.carrocinha.mockRejectedValue('faiô minin(a|u)!');
+  test('Testando se a promisse resolve!', async () => {
+    caoburao.mockResolvedValue('sucessuuu');
+    caoburao();
+    expect(caoburao).toHaveBeenCalled();
+    expect(caoburao).toHaveBeenCalledTimes(1);
+    expect(caoburao()).resolves.toBe('sucessuuu');
+    expect(caoburao).toHaveBeenCalledTimes(2);
+  });
 
-    expect(dogPic.carrocinha).toHaveBeenCalled();
-    expect(dogPic.carrocinha).toHaveBeenCalledTimes(3);
-    expect(dogPic.carrocinha()).rejects.toBe('faiô minin(a|u)!');
-    expect(dogPic.carrocinha).toHaveBeenCalledTimes(4);
+  test('Testando quando a promisse não resolve!', async () => {
+    caoburao.mockRejectedValue('faiô minin(a|u)!');
+    caoburao();
+    expect(caoburao).toHaveBeenCalled();
+    expect(caoburao).toHaveBeenCalledTimes(1);
+    expect(caoburao()).rejects.toBe('faiô minin(a|u)!');
+    expect(caoburao).toHaveBeenCalledTimes(2);
   });  
 });
