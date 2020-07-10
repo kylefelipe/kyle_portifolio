@@ -10,6 +10,9 @@ function App() {
         <p>
           Kyle's Pokedex!
         </p>
+        <p>
+          1st Gen!
+        </p>
         {data.map(pokemon => <Pokemon {...pokemon}/>)}
       </header>
     </div>

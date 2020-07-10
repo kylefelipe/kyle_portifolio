@@ -8,10 +8,12 @@ class Pokemon extends React.Component {
     const properties = {name, type, averageWeight};
     
     return (
-      <div className="pokemon" key={id}>
-        <PokemonProperties {...properties} />
-        <ImagePokemon source={image} name={name} />
-        <a className='more-info' href={moreInfo}>More Info</a>
+      <div className="poke-container" key={id}>
+        <div className="pokemon">
+          <PokemonProperties {...properties} />
+          <ImagePokemon source={image} name={name} />
+        </div>
+        <a className='more-info' target="_blank" href={moreInfo}>More Info</a>
       </div>
     );
   }
