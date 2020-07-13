@@ -2,12 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-.pokemon {
+.pokemon , .card {
   display: flex;
 }
 
@@ -41,8 +37,22 @@
   margin: 0;
 }
 
+.pokecard-image {
+  border: 2px solid #fdffb6;
+  width: 80%;
+}
+
 li {
   text-align: left;
+}
+
+.card {
+  align-items: center;
+  flex-direction: column;
+  border: 10px solid #fdffb6;
+  border-radius: 20px;
+  height: 350px;
+  width: 250px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
